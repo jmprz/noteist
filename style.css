@@ -639,7 +639,7 @@ background-color: #758bfd;
   background-color: #333;
 }
 .dark-mode .mynotes-container{
-  background-color: #333;
+  background-color: rgb(65, 65, 65);
 }
 .dark-mode .mynotes-container p{
   color: white;
