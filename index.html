@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="stylesheet" href= "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Noteist │ Notes & To-Do List </title>
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+       <div class="hamburger">
+        <button alt="Open Mobile Menu" class="open-mobile-menu"><i class="fa-solid fa-bars fa-3x"></i>
+        </button>
+    </div>
+    <div class="header-logo">
+    <img src="images/logo.png" alt="logo" width="70px" height="30px">
+    <h1>&nbsp;Noteist</h1>
+    <button class="darkmode-icon close" id="darkmode"><i class="fa-solid fa-moon fa-3x"></i></button>
+    </div>
+        <div class="top-menu-wrapper">
+        <ul class="top-menu">
+        <li class="mob-block">
+        </li>
+   <div class="tab">
+    <center><div class="close"><button alt="Close Mobile Menu" class="close-mobile-menu">
+      <i class="fa-solid fa-xmark fa-3x"></i>
+  </button></div></center>
+    <button class="tablinks" onclick="openTitle(event, 'Notes')" id="defaultOpen"><i class="fa-solid fa-file-lines"></i>&nbsp;NOTES</button>
+        <button class="tablinks" onclick="openTitle(event, 'Todo')"><i class="fa-solid fa-clipboard-list"></i>&nbsp;TO-DO LIST</button>
+        <button class="tablinks" onclick="openTitle(event, 'About')"><i class="fa-solid fa-circle-info"></i>&nbsp;ABOUT</button>
+    </div>
+    </ul>
+        </div>
+        </nav>
+      </header>
+        <div id="Notes" class="tabcontent">
+            <!--NOTES Section-->
+            <div class="notes-container">
+                <div class="notes-add-container">
+                  <div class="notes-body-container">
+                    <h1 class="notes-body-title">Add Note</h1>
+                    <div class="notes-form">
+                      <input type="text" class="notes-form-title" id="note-title" placeholder="Title">
+                      <textarea class="notes-form-body" id="note-text" placeholder="Type here..."></textarea>
+                    </div>
+                    <button class="save-button" id="addBtn"><i class="fa-solid fa-plus fa-2x"></i></button>
+                  </div>
+                </div>
+              </div>
+              <div class="mynotes-content">
+                <div class="mynotes-container">
+              <h1 class="mynotes-container-title">My Notes</h1>
+              <p class="viewp">View, Edit & Delete notes here</p>
+            <div id="notes" class="no-notes"></div>
+            </div>
+            </div>
+          </div>
+          <!-- TO DO Section-->
+  <div id="Todo" class="tabcontent taskcontent">
+    <div class="notes-container">
+      <h1 class="notes-body-title">Add Task</h1>
+      <div class="todo">
+        <form>
+          <input type="text" class="todo-form-title" placeholder="Title">
+          <button type="submit" class="save-button"><i class="fa-solid fa-plus fa-2x"></i></button>
+        </form>
+        <div class="mytask-container">
+        <h1 class="mynotes-container-title">My List</h1>
+        <p class="viewp">View, Mark Complete, Edit & Delete task here</p>
+        <ul id="ulTask"></ul>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+  <!-- About Section-->
+  <div id="About" class="tabcontent taskcontent">
+    <div class="notes-container">
+      <p class="about-title">Organize Your Notes & To-Do List in One Place</p>
+  <div class="noteist-img">
+    <img src="images/about.svg" alt="noteist">
+  </div>
+    <div class="source-code">
+    <div class="github">
+      <img src="images/github.png" alt="github">
+      <p class="github-link"><a href="https://github.com/jmprz/noteist" target="_blank">SOURCE CODE</a></p>
+    </div>
+    </div>
+    <div class="made">
+    <p class="about-content">Made with &nbsp; </p>
+    <div class="about-content-heart">❤ &nbsp;</div>
+    <p class="about-content">by &nbsp; </p>
+    <p class="about-content-link"><a href="https://github.com/jmprz" target="_blank">Jack Perez</a></p>
+  </div>
+  </div>
+        <script>
+            const pageHeader = document.querySelector(".header");
+const openMobMenu = document.querySelector(".open-mobile-menu");
+const closeMobMenu = document.querySelector(".close-mobile-menu");
+const topMenuWrapper = document.querySelector(".top-menu-wrapper");
+const isVisible = "is-visible";
+const showOffCanvas = "show-offcanvas";
+const noTransition = "no-transition";
+let resize;
+// Opening Mobile Menu
+openMobMenu.addEventListener("click", () => {
+topMenuWrapper.classList.add(showOffCanvas);
+});
+// Closing Mobile Menu
+closeMobMenu.addEventListener("click", () => {
+topMenuWrapper.classList.remove(showOffCanvas);
+});
+// Resizing Screen
+window.addEventListener("resize", () => {
+pageHeader.querySelectorAll("*").forEach(function(el) {
+el.classList.add(noTransition);
+});
+clearTimeout(resize);
+resize = setTimeout(resizingComplete, 500);
+});
+function resizingComplete() {
+pageHeader.querySelectorAll("*").forEach(function(el) {
+el.classList.remove(noTransition);
+});
+}
+function openTitle(evt, titleName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(titleName).style.display = "block";
+    evt.currentTarget.className += " active";
+  }
+  document.getElementById("defaultOpen").click();
+        </script>
+          <script src="script/note.js"></script>
+          <script src="script/todo.js"></script>
+          <script src="script/darkmode.js"></script>
+</body>
+</html>
