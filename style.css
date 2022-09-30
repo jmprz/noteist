@@ -639,7 +639,7 @@ background-color: #758bfd;
   background-color: #333;
 }
 .dark-mode .mynotes-container{
-  background-color: rgb(65, 65, 65);
+  background-color: #333;
 }
 .dark-mode .mynotes-container p{
   color: white;
@@ -751,6 +751,7 @@ background-color: #758bfd;
     .mynotes-container{
       margin-left: 10px;
       margin-right: 10px;
+      margin-top: 10
     }
     .mynotes-container-title{
       font-size: 25px;
