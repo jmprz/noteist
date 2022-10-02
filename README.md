@@ -8,4 +8,4 @@ Noteist, pronounced "Notice," is a simple web application with a minimalist desi
 
 <h1> Links </h1>
 
-<a href="noteist.vercel.app" target="_blank"> Live Site </a> │ <a href="https://youtu.be/3PZ6Ljc_eFs" target="_blank"> Video Demo </a> 
+<a href="https://noteist.vercel.app" target="_blank"> Live Site </a> │ <a href="https://youtu.be/3PZ6Ljc_eFs" target="_blank"> Video Demo </a> 
