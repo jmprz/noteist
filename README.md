@@ -9,3 +9,9 @@ Noteist, pronounced "Notice," is a simple web application with a minimalist desi
 <h1> Links </h1>
 
 <a href="https://noteist.vercel.app" target="_blank"> Live Site </a> │ <a href="https://youtu.be/3PZ6Ljc_eFs" target="_blank"> Video Demo </a> 
+
+<h1>Follow me on </h1>
+<p> <a href="https://www.behance.net/jmpstudio" target="_blank"> Behance </a> </p>
+<p>  <a href="https://www.dribbble.com/jmpstudio" target="_blank"> Dribbble </a> </p>
+<p> <a href="https://www.facebook.com/jmpstudio.designs"  target="_blank"> Facebook </a> </p>
+<p>  <a href="https://www.youtube.com/channel/UCmHTFfv3mFSnEE9I20X2GvA" target="_blank"> YouTube </a> </p>
