@@ -15,3 +15,5 @@ Noteist, pronounced "Notice," is a simple web application with a minimalist desi
 <p>  <a href="https://www.dribbble.com/jmpstudio" target="_blank"> Dribbble </a> </p>
 <p> <a href="https://www.facebook.com/jmpstudio.designs"  target="_blank"> Facebook </a> </p>
 <p>  <a href="https://www.youtube.com/channel/UCmHTFfv3mFSnEE9I20X2GvA" target="_blank"> YouTube </a> </p>
+
+<h2 align="center"> Thank you and have a nice day!❤ </h2>
