@@ -5,7 +5,7 @@
       let addTxt=document.getElementById("note-text");
       let addTitle = document.getElementById("note-title");
       if (addTitle.value == "" || addTxt.value == "") {
-        return alert("Please add Note Title and Details")
+        return alert("Please add Note Title and Details!")
     }
       let notes=localStorage.getItem("notes");
       if(notes==null){
@@ -76,15 +76,13 @@
 }
 /* Delete Function*/
   function deleteNotes(index){
-      console.log("i am delete",index);
       let notes=localStorage.getItem("notes");
-      if(notes==null){
-          notesObj=[];
+      if (confirm('The selected item will be deleted', notes==null)){
+        notesObj.splice(index,1);
       }
       else{
-          notesObj=JSON.parse(notes);
+        // Do nothing
       }
-      notesObj.splice(index,1);
       localStorage.setItem("notes", JSON.stringify(notesObj));
       showNotes();
   }
