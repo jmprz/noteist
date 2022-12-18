@@ -1,10 +1,16 @@
 # Noteist │ Notes & To-Do List
 <h2 align="center"> Organize Your Notes & To-Do List in One Place </h2>
 
-![about](https://user-images.githubusercontent.com/39219195/193308641-23bce618-52c7-4997-ae06-53eda6e36398.png)
+![about](https://github.com/jmprz/noteist/blob/3f7f7c7c81376986e07cdaa7d769c88fea772240/images/about.svg)
 
 <h1> About </h1>
 Noteist, pronounced "Notice," is a simple web application with a minimalist design that allows you to create notes and to-do lists for increased productivity. It offers a dark mode feature to protect your eyes and it is responsive to fit your device. This is my first HTML, CSS, and JavaScript project.
+
+<h1> Changelog </h1>
+Version 2.0
+- Changed and Improved User Interface (UI)
+- 90% Responsive (sidebar collapse not working when click an item)
+- Updated JavaScripts
 
 <h1> Links </h1>
 
