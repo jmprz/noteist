@@ -10,9 +10,9 @@ function loadTasks() {
   tasks.forEach(task => {
     const list = document.getElementById("ulTask");
     const li = document.createElement("li");
-    li.innerHTML = `<input type="checkbox" onclick="taskComplete(this)" class="check" ${task.completed ? 'checked' : ''}>
+    li.innerHTML = `<button onclick="taskComplete(this)" id="btn" class="check" ${task.completed ? 'checked' : ''}>✔</button>
           <input type="text" value="${task.task}" class="task ${task.completed ? 'completed' : ''}" onfocus="getCurrentTask(this)" onblur="editTask(this)">
-          <button class="cross-button" onclick="removeTask(this)">✖</button><div class="check-mark">✔</div>`;
+          <button class="cross-button" onclick="removeTask(this)">✖</button>`;
     list.insertBefore(li, list.children[0]);
   });
 }
@@ -29,9 +29,9 @@ function addTask() {
 
 /* List */
   const li = document.createElement("li");
-  li.innerHTML = `<input type="checkbox" onclick="taskComplete(this)" class="check" ${task.completed ? 'checked' : ''}>
+  li.innerHTML = `<button onclick="taskComplete(this)" class="check" ${task.completed ? 'checked' : ''}>✔</button>
       <input type="text" value="${task.value}" class="task" onfocus="getCurrentTask(this)" onblur="editTask(this)">
-  <button class="cross-button" onclick="removeTask(this)">✖</button><div class="check-mark">✔</div>`;
+  <button class="cross-button" onclick="removeTask(this)">✖</button>`;
   list.insertBefore(li, list.children[0]);
   task.value = "";
 }
@@ -47,17 +47,19 @@ function taskComplete(event) {
   localStorage.setItem("tasks", JSON.stringify(tasks));
   event.nextElementSibling.classList.toggle("completed");
 }
-
 /* Delete Task Function */
 function removeTask(event) {
   let tasks = Array.from(JSON.parse(localStorage.getItem("tasks")));
   tasks.forEach(task => {
-    if (task.task === event.parentNode.children[1].value) {
+    if (confirm('The selected item will be deleted', task.task === event.parentNode.children[1].value)) {
       tasks.splice(tasks.indexOf(task), 1);
+      event.parentElement.remove();
+    }
+    else{
+      // Do nothing
     }
   });
   localStorage.setItem("tasks", JSON.stringify(tasks));
-  event.parentElement.remove();
 }
 /* Current Task */
 var currentTask = null;
