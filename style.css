@@ -820,7 +820,7 @@ justify-content: space-between;
   }
   .notes-form-title{
   flex-direction: column;
-  padding-top: 100px;
+  padding-top: 10px;
     }
     .tablinks{
       font-size: 30px;
