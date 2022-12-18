@@ -11,6 +11,7 @@ Version 2.0
 <p> - Changed and Improved User Interface (UI)<br>
 - 90% Responsive (sidebar collapse not working when click an item)<br>
 - Updated JavaScripts <p>
+- Added alert confirmation when deleting an item
 
 <h1> Links </h1>
 
