@@ -10,33 +10,34 @@
     <title>Noteist │ Notes & To-Do List </title>
 </head>
 <body>
-    <header class="header">
-        <nav class="navbar">
-       <div class="hamburger">
-        <button alt="Open Mobile Menu" class="open-mobile-menu"><i class="fa-solid fa-bars fa-3x"></i>
-        </button>
-    </div>
-    <div class="header-logo">
+  <input type="checkbox" id="checkbox_toggle" />
+  <label for="checkbox_toggle" class="hamburger">&#9776;</label>
+  <div class="header-logo-responsive">
     <img src="images/logo.png" alt="logo" width="70px" height="30px">
     <h1>&nbsp;Noteist</h1>
-    <button class="darkmode-icon close" id="darkmode"><i class="fa-solid fa-moon fa-3x"></i></button>
-    </div>
-        <div class="top-menu-wrapper">
-        <ul class="top-menu">
-        <li class="mob-block">
-        </li>
-   <div class="tab">
-    <center><div class="close"><button alt="Close Mobile Menu" class="close-mobile-menu">
-      <i class="fa-solid fa-xmark fa-3x"></i>
-  </button></div></center>
-    <button class="tablinks" onclick="openTitle(event, 'Notes')" id="defaultOpen"><i class="fa-solid fa-file-lines"></i>&nbsp;NOTES</button>
-        <button class="tablinks" onclick="openTitle(event, 'Todo')"><i class="fa-solid fa-clipboard-list"></i>&nbsp;TO-DO LIST</button>
-        <button class="tablinks" onclick="openTitle(event, 'About')"><i class="fa-solid fa-circle-info"></i>&nbsp;ABOUT</button>
-    </div>
-    </ul>
+  </div>
+  <div class="sidebar">
+        <div class="sidebar-content">
+          <div class="header-logo">
+            <img src="images/logo.png" alt="logo" width="70px" height="30px">
+            <h1>&nbsp;Noteist</h1>
+          </div>
+        <button class="tablinks" onclick="openTitle(event, 'Notes')" id="defaultOpen"><i class="fa-solid fa-file-lines"></i>&nbsp;NOTES</button>
+            <button class="tablinks" onclick="openTitle(event, 'Todo')"><i class="fa-solid fa-clipboard-list"></i>&nbsp;TO-DO LIST</button>
+            <button class="tablinks" onclick="openTitle(event, 'About')"><i class="fa-solid fa-circle-info"></i>&nbsp;ABOUT</button>
+           <div class="switch-content">
+            <div class="light-text"><i class="fa-solid fa-sun fa-2x"></i></div>
+            <label for="ChangeTheme"> 
+              <input type="checkbox" class="switch-dark" id="ChangeTheme" /> <span class="slide"></span>
+            </label>
+            <div class="dark-text"><i class="fa-solid fa-moon fa-2x"></i></div>
+          </div>
         </div>
-        </nav>
-      </header>
+      </div>
+    </div>
+        </div>
+        <div class="header"></div>
+        <div class="content-position">
         <div id="Notes" class="tabcontent">
             <!--NOTES Section-->
             <div class="notes-container">
@@ -59,7 +60,9 @@
             </div>
             </div>
           </div>
+        </div>
           <!-- TO DO Section-->
+          <div class="content-position">
   <div id="Todo" class="tabcontent taskcontent">
     <div class="notes-container">
       <h1 class="notes-body-title">Add Task</h1>
@@ -77,7 +80,9 @@
     </div>
   </div>
 </div>
+</div>
   <!-- About Section-->
+  <div class="content-position">
   <div id="About" class="tabcontent taskcontent">
     <div class="notes-container">
       <p class="about-title">Organize Your Notes & To-Do List in One Place</p>
@@ -97,36 +102,8 @@
     <p class="about-content-link"><a href="https://github.com/jmprz" target="_blank">Jack Perez</a></p>
   </div>
   </div>
-        <script>
-            const pageHeader = document.querySelector(".header");
-const openMobMenu = document.querySelector(".open-mobile-menu");
-const closeMobMenu = document.querySelector(".close-mobile-menu");
-const topMenuWrapper = document.querySelector(".top-menu-wrapper");
-const isVisible = "is-visible";
-const showOffCanvas = "show-offcanvas";
-const noTransition = "no-transition";
-let resize;
-// Opening Mobile Menu
-openMobMenu.addEventListener("click", () => {
-topMenuWrapper.classList.add(showOffCanvas);
-});
-// Closing Mobile Menu
-closeMobMenu.addEventListener("click", () => {
-topMenuWrapper.classList.remove(showOffCanvas);
-});
-// Resizing Screen
-window.addEventListener("resize", () => {
-pageHeader.querySelectorAll("*").forEach(function(el) {
-el.classList.add(noTransition);
-});
-clearTimeout(resize);
-resize = setTimeout(resizingComplete, 500);
-});
-function resizingComplete() {
-pageHeader.querySelectorAll("*").forEach(function(el) {
-el.classList.remove(noTransition);
-});
-}
+  </div>
+<script>
 function openTitle(evt, titleName) {
     var i, tabcontent, tablinks;
     tabcontent = document.getElementsByClassName("tabcontent");
