@@ -8,10 +8,10 @@ Noteist, pronounced "Notice," is a simple web application with a minimalist desi
 
 <h1> Changelog </h1>
 Version 2.0
-<p> - Changed and Improved User Interface (UI)<br>
-- 90% Responsive (sidebar collapse not working when click an item)<br>
-- Updated JavaScripts <br>
-- Added alert confirmation when deleting an item <p>
+<p>- 90% Responsive (sidebar collapse not working when click the sections) <br>
+- Added alert confirmation when deleting an item <br>
+- Changed and Improved User Interface (UI)<br>
+- Updated JavaScripts <p>
 
 <h1> Links </h1>
 
